@@ -1,49 +1,67 @@
 {
-	"name": "onetime",
-	"version": "7.0.0",
-	"description": "Ensure a function is only called once",
-	"license": "MIT",
-	"repository": "sindresorhus/onetime",
-	"funding": "https://github.com/sponsors/sindresorhus",
-	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "https://sindresorhus.com"
-	},
-	"type": "module",
-	"exports": {
-		"types": "./index.d.ts",
-		"default": "./index.js"
-	},
-	"sideEffects": false,
-	"engines": {
-		"node": ">=18"
-	},
-	"scripts": {
-		"test": "xo && ava && tsd"
-	},
-	"files": [
-		"index.js",
-		"index.d.ts"
-	],
-	"keywords": [
-		"once",
-		"function",
-		"one",
-		"onetime",
-		"func",
-		"fn",
-		"single",
-		"call",
-		"called",
-		"prevent"
-	],
-	"dependencies": {
-		"mimic-function": "^5.0.0"
-	},
-	"devDependencies": {
-		"ava": "^5.3.1",
-		"tsd": "^0.29.0",
-		"xo": "^0.56.0"
-	}
+  "name": "@reedchan/onetime",
+  "version": "8.0.0",
+  "description": "Ensure a function is only called once.\nForked from sindresorhus/onetime, with native TypeScript support.",
+  "license": "MIT",
+  "repository": "reedchan7/onetime",
+  "funding": "https://github.com/sponsors/reedchan7",
+  "author": {
+    "name": "Reed Chan",
+    "email": "reedchan7@gmail.com",
+    "url": "https://reedchan.com"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "sideEffects": false,
+  "packageManager": "pnpm@10.17.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "pnpm run build:esm && pnpm run build:cjs && node scripts/postbuild.mjs",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json && mv dist/cjs/index.js dist/index.cjs && rm -rf dist/cjs",
+    "dev": "tsc --watch",
+    "test": "pnpm run build && vitest run",
+    "test:watch": "vitest",
+    "prettier": "npx prettier --write *.ts",
+    "prepublishOnly": "pnpm run build"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "once",
+    "function",
+    "one",
+    "onetime",
+    "func",
+    "fn",
+    "single",
+    "call",
+    "called",
+    "prevent"
+  ],
+  "dependencies": {
+    "mimic-function": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "prettier": "^3.6.2",
+    "tsd": "^0.33.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "xo": "^1.2.2"
+  }
 }
