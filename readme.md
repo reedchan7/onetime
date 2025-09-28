@@ -9,7 +9,11 @@ When called multiple times it will return the return value from the first call.
 ## Install
 
 ```sh
+# npm
 npm install onetime
+
+# pnpm
+pnpm install onetime
 ```
 
 ## Usage
