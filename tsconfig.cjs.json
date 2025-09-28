@@ -8,6 +8,6 @@
 		"declarationMap": false,
 		"sourceMap": false
 	},
-	"include": ["index.ts"],
+	"include": ["index.ts", "mimic-function.ts"],
 	"exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]
 }

@@ -1,4 +1,4 @@
-import mimicFunction from "mimic-function";
+import mimicFunction from "./mimic-function.js";
 
 export type Options = {
   /**

@@ -1,6 +1,6 @@
 {
   "name": "@reedchan/onetime",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "Ensure a function is only called once.\nForked from sindresorhus/onetime, with native TypeScript support.",
   "license": "MIT",
   "repository": "reedchan7/onetime",
@@ -21,7 +21,7 @@
     }
   },
   "sideEffects": false,
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.17.1",
   "engines": {
     "node": ">=18"
   },
@@ -52,9 +52,6 @@
     "called",
     "prevent"
   ],
-  "dependencies": {
-    "mimic-function": "^5.0.1"
-  },
   "devDependencies": {
     "@types/node": "^24.5.2",
     "prettier": "^3.6.2",
