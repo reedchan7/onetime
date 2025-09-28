@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import onetime from "./index.js";
+import onetime from "./index";
 
 describe("onetime", () => {
   it("should call function only once", () => {

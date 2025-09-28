@@ -1,6 +1,6 @@
 {
   "name": "@reedchan/onetime",
-  "version": "8.0.2",
+  "version": "8.0.3",
   "description": "Ensure a function is only called once.\nForked from sindresorhus/onetime, with native TypeScript support.",
   "license": "MIT",
   "repository": "reedchan7/onetime",
@@ -11,24 +11,14 @@
     "url": "https://reedchan.com"
   },
   "main": "dist/index.cjs",
-  "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
   "sideEffects": false,
   "packageManager": "pnpm@10.17.1",
   "engines": {
     "node": ">=18"
   },
   "scripts": {
-    "build": "pnpm run build:esm && pnpm run build:cjs && node scripts/postbuild.mjs",
-    "build:esm": "tsc --project tsconfig.esm.json",
-    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build": "tsc",
     "dev": "tsc --watch",
     "test": "pnpm run build && vitest run",
     "test:watch": "vitest",

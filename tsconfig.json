@@ -2,9 +2,9 @@
   "include": ["*.ts", "**/*.test.ts"],
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
-    "target": "es2022",
-    "lib": ["es2022", "dom"],
-    "module": "ES2022",
+    "target": "es2020",
+    "lib": ["es2020"],
+    "module": "CommonJS",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -29,7 +29,7 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "skipLibCheck": true
   }
 }
