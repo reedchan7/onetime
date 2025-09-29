@@ -6,20 +6,36 @@ When called multiple times it will return the return value from the first call.
 
 *Unlike the module [once](https://github.com/isaacs/once), this one isn't naughty and extending `Function.prototype`.*
 
+This package is a lightweight fork of `sindresorhus/onetime` that preserves the original behavior and keeps the public API fully compatible, while additionally providing:
+
+- **CommonJS support out of the box**
+- **Native TypeScript typings (no separate install)**
+- **Zero runtime dependencies**
+
 ## Install
 
 ```sh
-# npm
-npm install onetime
+# pnpm (recommended)
+pnpm add @reedchan/onetime
 
-# pnpm
-pnpm install onetime
+# npm
+npm install @reedchan/onetime
+
+# yarn
+yarn add @reedchan/onetime
 ```
+
+## Features
+
+- 🚀  100% API-compatible with the original `onetime` package
+- ⭐  Supports both ESM and CommonJS consumers
+- 🔥  Native TypeScript support via included `types` field
+- 🎉  Zero runtime dependencies
 
 ## Usage
 
-```js
-import onetime from 'onetime';
+```typescript
+import onetime from '@reedchan/onetime';
 
 let index = 0;
 
@@ -32,8 +48,8 @@ foo(); //=> 1
 onetime.callCount(foo); //=> 3
 ```
 
-```js
-import onetime from 'onetime';
+```typescript
+import onetime from '@reedchan/onetime';
 
 const foo = onetime(() => {}, {throw: true});
 
@@ -73,7 +89,7 @@ Returns a number representing how many times `fn` has been called.
 Note: It throws an error if you pass in a function that is not wrapped by `onetime`.
 
 ```js
-import onetime from 'onetime';
+import onetime from '@reedchan/onetime';
 
 const foo = onetime(() => {});
 

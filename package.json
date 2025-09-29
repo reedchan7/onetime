@@ -1,6 +1,6 @@
 {
   "name": "@reedchan/onetime",
-  "version": "8.0.5",
+  "version": "8.1.0",
   "description": "Ensure a function is only called once.\nForked from sindresorhus/onetime, with native TypeScript support.",
   "license": "MIT",
   "repository": "reedchan7/onetime",
